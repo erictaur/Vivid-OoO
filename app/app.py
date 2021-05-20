@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-mark = ("BUSY", "TAG", "TAG_OLD")
+mark = ("PC", "BUSY", "TAG", "TAG_OLD")
 size = 8
 type = ("INST", "RS", "RT", "RD")
 inst = (

@@ -1,0 +1,14 @@
+tr {
+    line-height: 30px;
+    min-height: 30px;
+    height: 30px;
+}
+
+.body {
+    display: table;
+    background-color: green;
+}
+
+.table {
+    font-size: 12px;
+}

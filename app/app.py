@@ -2,10 +2,13 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-mark = ("PC", "BUSY", "TAG", "TAG_OLD")
-size = 8
-type = ("INST", "RS", "RT", "RD")
-inst = (
+mark_ROB = ("PC", "BUSY", "TAG", "TAG OLD")
+mark_RS  = ("PC", "BUSY",
+    "RS ready", "RT ready", "RD ready", "ISSUED")
+size     = 8
+type_ROB = ("INST", "RS", "RT", "RD")
+type_RS  = ("INST", "RS", "RT", "RD")
+inst     = (
     ("add", "r1", "r4", "r3"),
     ("li", "r2", "r5", ""),
     ("mult", "r3", "r4", "r5"),
@@ -20,4 +23,6 @@ inst = (
 
 @app.route("/")
 def ooo():
-    return render_template("ooo.html", size=size, type=type, inst=inst, mark=mark)
+    return render_template("ooo.html", size=size, inst=inst,
+    type_RS=type_RS,  mark_RS=mark_RS,
+    type_ROB=type_ROB, mark_ROB=mark_ROB)
